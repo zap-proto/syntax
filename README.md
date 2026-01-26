@@ -207,6 +207,21 @@ pnpm build
 pnpm test
 ```
 
+## Quick Fallback
+
+While setting up custom Shiki integration, you can use `proto` as a language alias since ZAP's schema syntax is similar to Protocol Buffers:
+
+```markdown
+\`\`\`proto
+struct Message @0 {
+  id @0 :UInt64;
+  payload @1 :Data;
+}
+\`\`\`
+```
+
+This provides basic syntax highlighting until full ZAP language support is configured.
+
 ## Related
 
 - [ZAP Protocol](https://zap-protocol.github.io) - Official documentation
