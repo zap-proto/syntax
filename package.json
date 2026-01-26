@@ -1,0 +1,83 @@
+{
+  "name": "zap-syntax",
+  "displayName": "ZAP Protocol Syntax",
+  "description": "Syntax highlighting for ZAP (Zero-copy Application Protocol) schema files",
+  "version": "1.0.0",
+  "publisher": "zap-protocol",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zap-protocol/syntax.git"
+  },
+  "homepage": "https://zap-protocol.github.io",
+  "bugs": {
+    "url": "https://github.com/zap-protocol/syntax/issues"
+  },
+  "keywords": [
+    "zap",
+    "zap-protocol",
+    "serialization",
+    "binary",
+    "schema",
+    "syntax-highlighting",
+    "textmate",
+    "shiki"
+  ],
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./grammar": {
+      "import": "./syntaxes/zap.tmLanguage.json",
+      "require": "./syntaxes/zap.tmLanguage.json"
+    },
+    "./language-configuration": {
+      "import": "./language-configuration.json",
+      "require": "./language-configuration.json"
+    }
+  },
+  "files": [
+    "dist",
+    "syntaxes",
+    "language-configuration.json"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "zap",
+        "aliases": ["ZAP", "ZAP Protocol", "zap"],
+        "extensions": [".zap", ".zaps"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/zap-light.svg",
+          "dark": "./icons/zap-dark.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "zap",
+        "scopeName": "source.zap",
+        "path": "./syntaxes/zap.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
