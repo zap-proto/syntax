@@ -1,5 +1,8 @@
 # ZAP Protocol Syntax Highlighting
 
+> **Docs:** [ZAP schema syntax highlighting](https://zap-proto.dev/docs/sdks) · part of the [ZAP Protocol](https://zap-proto.io)
+
+
 Official syntax highlighting for ZAP (Zero-copy Application Protocol) schema files.
 
 ## Features
