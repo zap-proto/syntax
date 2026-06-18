@@ -56,9 +56,9 @@ export function getZapGrammar() {
  */
 export async function registerZapLanguage(highlighter: any) {
   await highlighter.loadLanguage({
+    ...grammar,
     name: 'zap',
     scopeName: 'source.zap',
-    ...grammar,
   });
 }
 

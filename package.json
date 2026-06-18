@@ -7,11 +7,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zap-protocol/syntax.git"
+    "url": "git+https://github.com/zap-proto/syntax.git"
   },
-  "homepage": "https://zap-protocol.github.io",
+  "homepage": "https://github.com/zap-proto/syntax#readme",
   "bugs": {
-    "url": "https://github.com/zap-protocol/syntax/issues"
+    "url": "https://github.com/zap-proto/syntax/issues"
   },
   "keywords": [
     "zap",
@@ -33,9 +33,9 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./grammar": {
       "import": "./syntaxes/zap.tmLanguage.json",
